@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# Mini Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React shopping cart application built as part of a take-home challenge.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Hardcoded list of products
+- Add items to the cart
+- Increase and decrease item quantities
+- Remove items from the cart
+- Subtotal shown for each cart item
+- Total price updates live
+- Cart is saved in `localStorage`, so it saves across page reloads
+- Unit tests for cart total calculation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vitest
+- CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+Clone the repository:
+```bash
+git clone https://github.com/RhysMarch/mini-shopping-cart.git
+
+cd mini-shopping-cart
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Start the development server:
+```bash
+npm run dev
+```
+
+## Running the Tests
+This project uses Vitest for testing the cart total calculation logic. To run the tests:
+```bash
+npm run test
+```
+
+---
+
+## Notes / Future Improvements
+
+My implementation focuses on core functionality and requirements. Given more time, the following improvements would be prioritised:
+
+- Improve the UI with product images, and improved layout based on common online shopping platforms
+- Expand test coverage to include edge cases and user interactions
+- Improve accessibility (keyboard navigation, screen reader support)
+- Improve usability (e.g., "clear cart" button, manual quantity input)
+- Add validation for user inputs such as manual quantity entry
+- Introduce an admin panel for managing products
+- Use a design system (e.g., NHS.UK React components) to improve consistency
