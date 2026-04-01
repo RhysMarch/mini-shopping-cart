@@ -37,8 +37,8 @@ export function getItemQuantity(cart: Cart, productId: string): number {
     return quantity
 }
 
-export function calculateSubtotal(price: number, quantity: number): number {
-    return price * quantity
+export function calculateSubtotal(pricePence: number, quantity: number): number {
+    return pricePence * quantity
 }
 
 export function calculateTotal(products: Product[], cart: Cart): number {
@@ -48,7 +48,7 @@ export function calculateTotal(products: Product[], cart: Cart): number {
         const quantity = getItemQuantity(cart, product.id)
 
         if (quantity > 0) {
-            total += calculateSubtotal(product.price, quantity)
+            total += calculateSubtotal(product.pricePence, quantity)
         }
     }
 
