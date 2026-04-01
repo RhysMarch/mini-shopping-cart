@@ -12,14 +12,6 @@ function App() {
     })
 
     useEffect(() => {
-        const storedCart = localStorage.getItem("cart")
-        if (storedCart) {
-            setCart(JSON.parse(storedCart))
-        }
-    }, [])
-
-    // Save to localStorage
-    useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
 
